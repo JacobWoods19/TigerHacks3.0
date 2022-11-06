@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadway Reports</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body style="background: lightblue !important;">
+    <script src="index.js"></script>
+    <div class = "grid h-screen place-items-center">
+    <div class="w-full max-w-xs">
+        <!--Center Text-->
+       
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 "name="myform" method="POST">
+          <div class="text-center">
+            <h1 class = "text-2xl font-bold text-black-100">Roadway Reports</h1><br>
+        </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+              Email
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" name="email" type="text" placeholder="Email">
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+              Password
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" name="password" type="password" placeholder="********">
+            <p id="email_error" class="hidden text-red-500 text-xs italic">Incorrect email. Try again.</p>
+            <p id="password_error" class="hidden text-red-500 text-xs italic">Incorrect password. Try again.</p>
+            </div>
+          <div class="flex content-center items-center center-text justify-between">
+            <button onclick="validate_login()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" name="submit_button">
+              Create Account
+            </button>
+          </div>
+        </form>
+      </div>      
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+body {
+    padding-top: 20px;
+    background: lightblue !important;
+    justify-content: center;
+}
+
+.row {
+    justify-content: center;
+    font-size: 100px;
+  }
+
+.btn-square-xl {
+    width: 600px !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    height: 600px !important;
+    text-align: center;
+    padding: 0px;
+}
