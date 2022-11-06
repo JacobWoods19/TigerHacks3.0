@@ -10,10 +10,9 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
   </head>
   <body style="padding-left:20px;">
-	<script src="index.js"></script>
     <a href="/buttons.html">Add New Report</a>
     <h1 style="padding-top: 20px;">My Past Reports</h1>
-    <table class="table">
+    <table class="table" id="history_table">
         <thead>
           <tr>
             <th scope="col">Date</th>
@@ -22,22 +21,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>11/05/2022 7:00pm</td>
-            <td>Lawn chair</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>11/03/2022 8:00pm</td>
-            <td>Broken fender</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>11/02/2022 10:00pm</td>
-            <td>Pothole</td>
-            <td>No</td>
-          </tr>
+
         </tbody>
       </table>
+      <script src="get_files.js"></script>
   </body>
 </html>

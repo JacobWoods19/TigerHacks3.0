@@ -39,6 +39,7 @@ function create_report(incident_type) {
 
 
 
+
 // function verify_user() {
 //     var email = document.getElementById("email").value;
 //     var password = document.getElementById("password").value;
