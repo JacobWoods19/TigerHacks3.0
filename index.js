@@ -5,6 +5,7 @@ function report(selection) {
 const backend_url = 'https://clownfish-app-y6vt9.ondigitalocean.app'
 
 
+
 function getLocation() {
 
     if (navigator.geolocation) {
@@ -22,6 +23,7 @@ function handle_location(position) {
 }
 
 function create_report(incident_type) {
+    alert('Creating report for ' + incident_type)
     var lat = localStorage.getItem("lat");
     var lon = localStorage.getItem("lon");
     var email = localStorage.getItem("email");
@@ -29,7 +31,8 @@ function create_report(incident_type) {
         "incident_type": incident_type,
         "lat": lat,
         "lon": lon,
-        "email": email
+        "email": email,
+        "date": new Date().toISOString().slice(0, 10)
     }
     submit_incident(data);
 }
@@ -51,7 +54,6 @@ function create_report(incident_type) {
 //         });
 
 // }
-
 
 
 
@@ -104,5 +106,38 @@ const verify_user = async (email, password) => {
         alert("Invalid credentials")
     }
     
+}
+
+function create_account() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var credentials_error = document.getElementById("credentials_error");
+
+    //make network request to backend to verify user
+    create_account_send(email, password)
+    console.log("email: " + email + " password: " + password)
+}
+
+
+const create_account_send = async (email, password) => {
+    const response = await fetch(backend_url + "/add_user?email=" +email +"&password="+password, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email, password: password }),
+    });
+    const data = await response.json();
+    console.log(data)
+    //if status is success, redirect to buttons.html else flash error message
+    if (data.status == "success") {
+        //save user email in local storage
+        localStorage.setItem("email", email)
+        window.location = "buttons.html";
+    }
+    else {
+        alert("Invalid credentials")
+    }
+
 }
 getLocation()
